@@ -23,4 +23,5 @@
 5. Deployed to AWS or Heroku
 
 ## Schema Diagram
-<img width="529" alt="Screenshot 2022-06-21 001844" src="https://user-images.githubusercontent.com/102637669/174679365-4db883f2-e0e7-4731-879a-c9cf5160ce64.png">
+<img width="529" alt="Screenshot 2022-06-21 001844" src="https://user-images.githubusercontent.com/102637669/175829510-cbb8003c-1c20-4ec6-bdb4-9fb9d44c78bd.png">
+
