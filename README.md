@@ -3,7 +3,7 @@
 1. account for photographer and client🔵
 2. Edit Profile for photographer only
 3. Connect Profile photographer with Instagram 🌠
-4.add photos to profile photographer
+4. add photos to profile photographer
 5. Resrvation
 6. Payment methods
 7. review all order with bill
