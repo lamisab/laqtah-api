@@ -35,5 +35,6 @@ What is a Lagtah program 🧐?
 - Bouns (Fuse.js, Graphic Interface, Domain, Server does not sleep, coloring) ✅
 
 ## Schema Diagram
-<img width="529" alt="Screenshot 2022-06-21 001844" src="https://user-images.githsercontent.com/102637669/175830575-9ffcdbfe-0ead-47a3-a483-4d69f004499e.png">
+<img width="529" alt="Screenshot 2022-06-21 001844" src="https://user-images.githubusercontent.com/102637669/177493370-afd981fa-5115-43ff-bff7-4d84ed11ba01.png">
+
 
