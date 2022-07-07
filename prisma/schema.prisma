@@ -1,0 +1,99 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  user_id     String        @id @default(uuid()) @db.Uuid
+  username    String
+  password    String
+  address     String?
+  phone       String
+  email       String        @unique
+  reservation Reservation[]
+  role        Which
+  feedback    Feedback[]
+  payment     Payment[]
+  chatSupport ChatSupport[]
+}
+
+enum Which {
+  client
+  admin
+}
+
+model Portress {
+  portress_id String        @id @default(uuid()) @db.Uuid
+  username    String
+  password    String
+  email       String        @unique
+  phone       String
+  url         String
+  image       String
+  price       String
+  res_id      Reservation[]
+  payment     Payment[]
+  chatSupport ChatSupport[]
+}
+
+model Feedback {
+  feedback_id String @id @default(uuid()) @db.Uuid
+  feedback    String
+  User        User?  @relation(fields: [user_id], references: [user_id])
+  user_id     String @db.Uuid
+}
+
+model Reservation {
+  res_id              String    @id @default(uuid()) @db.Uuid
+  total               Int
+  event_date          DateTime
+  location            String
+  res_date            DateTime  @updatedAt
+  res_status          Status?
+  User                User?     @relation(fields: [user_id], references: [user_id])
+  user_id             String?   @db.Uuid
+  Portress            Portress? @relation(fields: [portressPortress_id], references: [portress_id])
+  portressPortress_id String?   @db.Uuid
+  payment_id          String?   @db.Uuid
+  payment             Payment[]
+  paymentPayment_id   String?   @db.Uuid
+}
+
+model Payment {
+  payment_id      String       @id @default(uuid()) @db.Uuid
+  payment_date    DateTime     @default(now())
+  payment_methods Methods
+  portress        Portress?    @relation(fields: [portress_id], references: [portress_id])
+  portress_id     String?      @db.Uuid
+  User            User?        @relation(fields: [user_id], references: [user_id])
+  user_id         String?      @db.Uuid
+  res_id          String?      @db.Uuid
+  reservation     Reservation? @relation(fields: [res_id], references: [res_id])
+}
+
+enum Methods {
+  cash
+  card
+}
+
+enum Status {
+  pending
+  accepted
+  rejected
+}
+
+model ChatSupport {
+  chat_id     String    @id @default(uuid()) @db.Uuid
+  QA          String
+  portress    Portress? @relation(fields: [portress_id], references: [portress_id])
+  portress_id String?   @db.Uuid
+  User        User?     @relation(fields: [user_id], references: [user_id])
+  user_id     String?   @db.Uuid
+}
