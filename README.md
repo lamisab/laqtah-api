@@ -37,6 +37,6 @@ What is a Lagtah program 🧐?
 ## Schema Diagram
 <img width="529" alt="Screenshot 2022-06-21 001844" src="https://user-images.githubusercontent.com/102637669/177493370-afd981fa-5115-43ff-bff7-4d84ed11ba01.png">
 
-##Heroku server 
+## Heroku server 
 https://laqtah.herokuapp.com/docs/static/index.html
 
