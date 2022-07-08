@@ -2,9 +2,6 @@
 	"name": "laqtah-api",
 	"version": "1.0.0",
 	"main": "index.js",
-	"engines": {
-    "yarn": "1.x"
-  }
 	"scripts": {
 		"dev": "nodemon -r dotenv/config src/index.ts | pino-colada",
 		"build": "rm -rf dist && tsc",
